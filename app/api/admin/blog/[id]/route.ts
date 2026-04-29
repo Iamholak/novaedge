@@ -91,11 +91,11 @@ export async function PATCH(
          slug = $2,
          excerpt = $3,
          content = $4,
-         status = $5,
+         status = $5::varchar,
          featured_image = $6,
          published_at = CASE
-           WHEN $5 = 'published' AND published_at IS NULL THEN NOW()
-           WHEN $5 = 'draft' THEN NULL
+           WHEN $5::varchar = 'published' AND published_at IS NULL THEN NOW()
+           WHEN $5::varchar = 'draft' THEN NULL
            ELSE published_at
          END,
          updated_at = NOW()

@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
       `INSERT INTO blog_posts
          (title, slug, excerpt, content, status, featured_image, author_id, published_at)
        VALUES
-         ($1, $2, $3, $4, $5, $6, $7, CASE WHEN $5 = 'published' THEN NOW() ELSE NULL END)
+         ($1, $2, $3, $4, $5::varchar, $6, $7, CASE WHEN $5::varchar = 'published' THEN NOW() ELSE NULL END)
        RETURNING id, title, slug, excerpt, status, featured_image, created_at, published_at`,
       [title, slug, excerpt, content, status, featuredImage, user.id]
     )
