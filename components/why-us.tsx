@@ -49,20 +49,20 @@ export function WhyUs() {
   }, [])
 
   return (
-    <section id="why-us" ref={sectionRef} className="py-24 relative overflow-hidden">
+    <section id="why-us" ref={sectionRef} className="relative overflow-hidden py-16 md:py-20">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+      <div className="absolute inset-0 bg-background" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className={cn(
-          "text-center mb-16 transition-all duration-700",
+          "mx-auto mb-10 max-w-3xl text-center transition-all duration-700 md:mb-12",
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         )}>
-          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+          <span className="mb-3 inline-block text-sm font-semibold uppercase text-primary">
             Why Choose Us
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl text-balance">
             Why Work With Us?
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
@@ -77,7 +77,7 @@ export function WhyUs() {
             <div
               key={reason.title}
               className={cn(
-                "group relative bg-card rounded-2xl p-8 border border-border shadow-sm transition-all duration-500 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5",
+                "group relative rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-500 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 md:p-7",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               )}
               style={{ transitionDelay: `${index * 100}ms` }}

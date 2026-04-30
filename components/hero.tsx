@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, BarChart3, CheckCircle2, LineChart, Play, ShieldCheck, Sparkles, Target } from "lucide-react"
 import { VideoModal } from "@/components/video-modal"
 
 export function Hero() {
@@ -68,104 +68,133 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 dark:cyber-grid"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-background pt-20 pb-10 md:pt-24 md:pb-12"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Animated gradient orbs - Futuristic in dark mode */}
-        <div 
-          className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 dark:bg-cyan-500/20 rounded-full blur-3xl animate-pulse"
-          style={{ transform: "translate(var(--mouse-x, 0), var(--mouse-y, 0))" }}
-        />
-        <div 
-          className="absolute bottom-1/4 -right-32 w-80 h-80 bg-primary/15 dark:bg-purple-500/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s", transform: "translate(calc(var(--mouse-x, 0) * -1), calc(var(--mouse-y, 0) * -1))" }}
-        />
-        <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 dark:bg-pink-500/10 rounded-full blur-3xl"
-        />
-        
-        {/* Grid pattern - Cyber grid in dark mode */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px] dark:bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)]" />
-        
-        {/* Scanline effect for dark mode */}
-        <div className="hidden dark:block absolute inset-0 pointer-events-none bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(0,0,0,0.03)_2px,rgba(0,0,0,0.03)_4px)]" />
-      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,transparent_0%,transparent_58%,rgba(20,184,166,0.08)_58%,rgba(20,184,166,0.08)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 mb-8 shadow-sm animate-fade-in dark:border-cyan-500/30 dark:shadow-[0_0_15px_rgba(6,182,212,0.2)] dark:bg-card/80">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary dark:bg-cyan-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary dark:bg-cyan-400" />
-          </span>
-          <span className="text-sm font-medium text-muted-foreground dark:text-cyan-300/80">
-            Transforming businesses since 2020
-          </span>
-        </div>
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8">
+        <div>
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm font-medium text-muted-foreground shadow-sm animate-fade-in">
+            <Sparkles className="h-4 w-4 text-teal-600" />
+            Strategy, finance, and design under one roof
+          </div>
 
-        {/* Main Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up">
-          <span className="text-foreground dark:text-cyan-50 dark:drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">We Make</span>
-          <br />
-          <span className="relative inline-block">
-            <span className="relative z-10 bg-primary text-primary-foreground px-4 py-2 rounded-lg inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300 dark:shadow-[0_0_30px_rgba(6,182,212,0.5)] dark:bg-gradient-to-r dark:from-cyan-500 dark:to-blue-600">
-              Your Business
+          <h1 className="mb-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl animate-fade-in-up">
+            <span className="text-foreground dark:text-cyan-50 dark:drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">We Make</span>
+            <br />
+            <span className="relative inline-block">
+              <span className="relative z-10 inline-block -rotate-1 transform rounded-lg bg-primary px-4 py-2 text-primary-foreground shadow-lg shadow-primary/25 transition-transform duration-300 hover:rotate-0 dark:bg-gradient-to-r dark:from-cyan-500 dark:to-blue-600 dark:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+                Your Business
+              </span>
             </span>
-          </span>
-          <br />
-          <span className="text-foreground dark:text-cyan-50 dark:drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">Better Than Others</span>
-        </h1>
+            <br />
+            <span className="text-foreground dark:text-cyan-50 dark:drop-shadow-[0_0_10px_rgba(6,182,212,0.3)]">Better Than Others</span>
+          </h1>
 
-        {/* Subheadline */}
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground mb-10 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          NovaEdge Solutions delivers innovative strategies in marketing, finance, and design 
-          to help your business grow and stand out in a competitive market.
-        </p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg animate-fade-in-up" style={{ animationDelay: "0.12s" }}>
+            NovaEdge helps teams turn scattered marketing, finance, and design work into clear decisions, stronger customer experiences, and measurable growth.
+          </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          <Button 
-            asChild
-            size="lg" 
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 text-lg shadow-lg shadow-primary/25 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 group dark:bg-gradient-to-r dark:from-cyan-500 dark:to-blue-600 dark:shadow-[0_0_25px_rgba(6,182,212,0.4)] dark:hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] glow-pulse"
-          >
-            <Link href="/get-started">
-              Start Your Journey
-              <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="rounded-full px-8 py-6 text-lg border-2 hover:bg-secondary transition-all duration-300 group bg-transparent dark:border-cyan-500/50 dark:text-cyan-300 dark:hover:bg-cyan-500/10 dark:hover:border-cyan-400"
-            onClick={() => setIsVideoOpen(true)}
-          >
-            <Play className="mr-2 w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-            Watch Demo
-          </Button>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row animate-fade-in-up" style={{ animationDelay: "0.24s" }}>
+            <Button
+              asChild
+              size="lg"
+              className="h-12 rounded-lg px-6 text-base shadow-lg shadow-primary/15 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <Link href="/get-started">
+                Start Your Project
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-12 rounded-lg bg-background px-6 text-base"
+              onClick={() => setIsVideoOpen(true)}
+            >
+              <Play className="mr-2 h-5 w-5" />
+              View Approach
+            </Button>
+          </div>
+
+          <div className="mt-6 grid max-w-2xl grid-cols-1 gap-3 text-sm text-muted-foreground sm:grid-cols-3 animate-fade-in-up" style={{ animationDelay: "0.36s" }}>
+            {[
+              ["Market clarity", Target],
+              ["Financial control", ShieldCheck],
+              ["Design execution", CheckCircle2],
+            ].map(([label, Icon]) => (
+              <div key={label as string} className="flex items-center gap-2">
+                <Icon className="h-4 w-4 text-teal-600" />
+                <span>{label as string}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Video Modal */}
         <VideoModal isOpen={isVideoOpen} onClose={() => setIsVideoOpen(false)} />
 
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="text-3xl sm:text-4xl font-bold text-foreground mb-1 transition-transform duration-300 group-hover:scale-110 dark:text-cyan-300 dark:drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]">
-                {stat.value}
+        <div className="relative animate-fade-in-up" style={{ animationDelay: "0.28s", transform: "translate(var(--mouse-x, 0), var(--mouse-y, 0))" }}>
+          <div className="rounded-lg border border-border bg-card p-4 shadow-2xl shadow-foreground/10 md:p-5">
+            <div className="mb-4 flex items-center justify-between gap-4 border-b border-border pb-3">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground">Growth console</p>
+                <h2 className="text-lg font-bold text-foreground md:text-xl">NovaEdge operating view</h2>
               </div>
-              <div className="text-sm text-muted-foreground dark:text-cyan-100/60">{stat.label}</div>
+              <div className="rounded-lg bg-emerald-500/10 px-3 py-1 text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                Live plan
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-primary rounded-full animate-pulse" />
+            <div className="grid grid-cols-2 gap-2.5">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-lg border border-border bg-background p-3">
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                  <p className="mt-1.5 text-2xl font-bold text-foreground md:text-3xl">{stat.value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 rounded-lg border border-border bg-background p-3">
+              <div className="mb-3 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <LineChart className="h-5 w-5 text-teal-600" />
+                  <span className="font-medium text-foreground">Performance mix</span>
+                </div>
+                <span className="text-sm text-muted-foreground">90 day focus</span>
+              </div>
+              <div className="space-y-2.5">
+                {[
+                  ["Marketing momentum", "78%", "bg-teal-500"],
+                  ["Financial confidence", "64%", "bg-sky-500"],
+                  ["Experience quality", "86%", "bg-amber-500"],
+                ].map(([label, width, color]) => (
+                  <div key={label}>
+                    <div className="mb-1 flex justify-between text-sm">
+                      <span className="text-muted-foreground">{label}</span>
+                      <span className="font-medium text-foreground">{width}</span>
+                    </div>
+                    <div className="h-2 rounded-full bg-muted">
+                      <div className={`h-full rounded-full ${color}`} style={{ width }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-4 grid grid-cols-[auto_1fr] gap-3 rounded-lg border border-border bg-background p-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+                <BarChart3 className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Next recommendation</p>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                  Improve offer positioning before scaling paid acquisition.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

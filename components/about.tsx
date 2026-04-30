@@ -59,9 +59,9 @@ export function About() {
   ]
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 relative">
+    <section id="about" ref={sectionRef} className="relative py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Left: Image/Visual */}
           <div 
             className={cn(
@@ -71,31 +71,28 @@ export function About() {
           >
             <div className="relative">
               {/* Main visual card */}
-              <div className="bg-card rounded-3xl p-8 border border-border shadow-xl">
+              <div className="rounded-lg border border-border bg-card p-6 shadow-xl md:p-8">
                 <div className="grid grid-cols-2 gap-4">
                   {/* Stat cards */}
-                  <div className="bg-primary/5 rounded-2xl p-6 hover:bg-primary/10 transition-colors duration-300">
+                  <div className="rounded-lg bg-muted p-5 transition-colors duration-300 hover:bg-primary/10">
                     <div className="text-4xl font-bold text-primary mb-2">{stats.clients_served}+</div>
                     <div className="text-sm text-muted-foreground">Clients Served</div>
                   </div>
-                  <div className="bg-primary/5 rounded-2xl p-6 hover:bg-primary/10 transition-colors duration-300">
+                  <div className="rounded-lg bg-muted p-5 transition-colors duration-300 hover:bg-primary/10">
                     <div className="text-4xl font-bold text-primary mb-2">{stats.success_rate}%</div>
                     <div className="text-sm text-muted-foreground">Success Rate</div>
                   </div>
-                  <div className="bg-primary/5 rounded-2xl p-6 hover:bg-primary/10 transition-colors duration-300">
+                  <div className="rounded-lg bg-muted p-5 transition-colors duration-300 hover:bg-primary/10">
                     <div className="text-4xl font-bold text-primary mb-2">{stats.team_experts}+</div>
                     <div className="text-sm text-muted-foreground">Team Experts</div>
                   </div>
-                  <div className="bg-primary/5 rounded-2xl p-6 hover:bg-primary/10 transition-colors duration-300">
+                  <div className="rounded-lg bg-muted p-5 transition-colors duration-300 hover:bg-primary/10">
                     <div className="text-4xl font-bold text-primary mb-2">{stats.years_excellence}+</div>
                     <div className="text-sm text-muted-foreground">Years Experience</div>
                   </div>
                 </div>
               </div>
 
-              {/* Floating accent elements */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: "1s" }} />
             </div>
           </div>
 
@@ -107,10 +104,10 @@ export function About() {
             )}
             style={{ transitionDelay: "200ms" }}
           >
-            <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+            <span className="mb-3 inline-block text-sm font-semibold uppercase text-primary">
               About Us
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
+            <h2 className="mb-5 text-3xl font-bold text-foreground sm:text-4xl md:text-5xl text-balance">
               A Cutting-Edge Firm Built for Growth
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
